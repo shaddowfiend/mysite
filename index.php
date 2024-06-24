@@ -2,7 +2,7 @@
 <?php include("db.php"); ?>
         <div class="box1">
         <h2>ALL STUDENTS</h2>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">ADD STUDENTS</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">ADD STUDENTS</button>
         </div>
     <table class = "table table-hover table-bordered table-striped">
         <thead>
@@ -33,9 +33,7 @@
                         <?php
                     }
             }
-            
             ?>
-            
         </tbody>
     </table>
 
