@@ -24,7 +24,7 @@
                 }
                 else{
                     while($row = mysqli_fetch_assoc($result)){
-                        ?>
+            ?>
                         <tr>
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo $row['first_name']; ?></td>
@@ -61,15 +61,25 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
+
+            <div class="form-group">
             <label for="f_name">Firts Name</label>
             <input type="text" name="f_name" class="form-control">
+            </div>
+            <div class="form-group">
             <label for="l_name">Last Name</label>
             <input type="text" name="l_name" class="form-control">
+            </div>
+            <div class="form-group">
             <label for="age">Age</label>
             <input type="text" name="age" class="form-control">
+            </div>
         </form>
       </div>
+
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <input type="submit" class="btn btn-success" name="add_students" value="SAVE">
@@ -78,4 +88,4 @@
   </div>
 </div>
 
-<?php include("footer.php");
+<?php include("footer.php"); ?>
