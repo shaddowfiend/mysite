@@ -12,7 +12,7 @@ if(isset($_GET['id'])) {
     $result = mysqli_query($connection, $query);
 
     if(!$result)
-        die("query Failed".mysqli_error());
+        die("query Failed".mysqli_error($connection));
     else
         $row = mysqli_fetch_assoc($result);       
     }   
@@ -34,7 +34,7 @@ if(isset($_GET['id'])) {
         $result = mysqli_query($connection, $query);
             
             if(!$result){
-                die("query Failed".mysqli_error());
+                die("query Failed".mysqli_error($connection));
             }else{
                 header('location:index.php?update_msg=You have successfully update the data.');
             }

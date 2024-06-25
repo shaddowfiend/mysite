@@ -15,7 +15,7 @@ if (isset($_POST['add_students']) ){
         $result = mysqli_query($connection,$query);
         
         if(!$result){
-            die("Querry Failed".mysqli_error());
+            die("Querry Failed".mysqli_error($connection));
         }
         else{
             header('location:index.php?insert_msg=Your data has been added successfully');

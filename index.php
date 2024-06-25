@@ -1,5 +1,21 @@
 <?php include("header.php"); ?>
 <?php include("db.php"); ?>
+
+    <?php 
+    if (isset($_GET['message'])) {
+        echo "<h6>" . $_GET['message'] . "</h6>";
+    }
+    ?>
+    <?php 
+    if (isset($_GET['insert_msg'])) {
+        echo "<h6 style='color: green;'>" . $_GET['insert_msg'] . "</h6>";
+    }
+    ?>
+    <?php 
+    if (isset($_GET['delete_msg'])) {
+        echo "<h6 style='color: green;'>" . $_GET['delete_msg'] . "</h6>";
+    }
+    ?>
         <div class="box1">
         <h2>ALL STUDENTS</h2>
         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">ADD STUDENTS</button>
@@ -20,7 +36,7 @@
                 $query = "select * from `students`";
                 $result = mysqli_query($connection, $query);
                 if(!$result){
-                    die("query Failed".mysqli_error());
+                    die("query Failed".mysqli_error($connection));
                 }
                 else{
                     while($row = mysqli_fetch_assoc($result)){
@@ -40,16 +56,7 @@
         </tbody>
     </table>
 
-    <?php 
-    if (isset($_GET['message'])) {
-        echo "<h6>" . $_GET['message'] . "</h6>";
-    }
-    ?>
-    <?php 
-    if (isset($_GET['insert_msg'])) {
-        echo "<h6 style='color: green;'>" . $_GET['insert_msg'] . "</h6>";
-    }
-    ?>
+    
 
     <form action="insert_data.php" method="post">
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
