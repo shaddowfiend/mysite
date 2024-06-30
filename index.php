@@ -7,8 +7,13 @@
     }
     ?>
     <?php 
-    if (isset($_GET['insert_msg'])) {
+    if (isset($_GET['insert_msg'])  ) {
         echo "<h6 style='color: green;'>" . $_GET['insert_msg'] . "</h6>";
+    }
+    ?>
+    <?php 
+    if (isset($_GET['intcheck_msg'])  ) {
+        echo "<h6 style='color: red;'>" . $_GET['intcheck_msg'] . "</h6>";
     }
     ?>
     <?php 
@@ -16,6 +21,7 @@
         echo "<h6 style='color: green;'>" . $_GET['delete_msg'] . "</h6>";
     }
     ?>
+
         <div class="box1">
         <h2>ALL STUDENTS</h2>
         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">ADD STUDENTS</button>
@@ -83,10 +89,9 @@
             <label for="age">Age</label>
             <input type="text" name="age" class="form-control">
             </div>
+
         </form>
       </div>
-
-
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <input type="submit" class="btn btn-success" name="add_students" value="SAVE">

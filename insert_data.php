@@ -6,9 +6,11 @@ if (isset($_POST['add_students']) ){
     $lname = $_POST['l_name'];
     $age = $_POST['age'];
 
-    if($fname == "" || empty($fname)){
-        header('location:index.php?message=You need to fill in the first name');
-
+    if($fname == "" || empty($fname) || empty($lname) || empty($age)){
+        header('location:index.php?message=You need to fill in all fields');
+        
+    } else if (!filter_var($age, FILTER_VALIDATE_INT) || $age < 0) {
+        header('Location: index.php?intcheck_msg=Age must be a non-negative number');
     }
     else{
         $query = "insert into `students` (first_name, last_name, age) values ('$fname','$lname','$age')";
