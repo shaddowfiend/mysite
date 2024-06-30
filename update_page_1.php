@@ -28,8 +28,9 @@ if(isset($_GET['id'])) {
         $fname = $_POST['f_name'];
         $lname = $_POST['l_name'];
         $age = $_POST['age'];
+        $email = $_POST['email'];
 
-        $query = "update students set first_name = '$fname',last_name = '$lname', age = $age where id = $idnew";
+        $query = "update students set first_name = '$fname',last_name = '$lname', age = $age, email = '$email' where id = $idnew";
 
         $result = mysqli_query($connection, $query);
             
@@ -56,6 +57,10 @@ if(isset($_GET['id'])) {
     <div class="form-group">
             <label for="age">Age</label>
             <input type="text" name="age" class="form-control" value="<?php echo isset($row['age']) ? htmlspecialchars($row['age']) : ''; ?>">
+    </div>
+    <div class="form-group">
+            <label for="age">Email</label>
+            <input type="text" name="email" class="form-control" value="<?php echo isset($row['email']) ? htmlspecialchars($row['email']) : ''; ?>">
     </div>
     <input type="submit" class="btn btn-success" name="update_students" value="UPDATE">
 </form>

@@ -100,16 +100,20 @@ if (isset($_GET['insert_msg'])) {
         <?php } ?>
         <div id="error_message" class="alert alert-danger" style="display: none;"></div>
             <div class="form-group">
-            <label for="f_name">First Name</label>
+            <label form="f_name">First Name</label>
             <input type="text" name="f_name" class="form-control">
             </div>
             <div class="form-group">
-            <label for="l_name">Last Name</label>
+            <label form="l_name">Last Name</label>
             <input type="text" name="l_name" class="form-control">
             </div>
             <div class="form-group">
-            <label for="age">Age</label>
+            <label form="age">Age</label>
             <input type="text" name="age" class="form-control">
+            </div>
+            <div class="form-group">
+            <label form="email">Email</label>
+            <input type="text" name="email" class="form-control">
             </div>
       </div>
       <div class="modal-footer">
